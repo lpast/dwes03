@@ -14,39 +14,51 @@
             <br />
             <div>
             <?php
+             
              $jugada==0;
+             $GLOBALS['jugada']=$jugada;
             
-            if (isset($_POST[empezar]) ){ // Si se envía por post se procesa la orden y en caso contrario no hace nada
+            if (isset($_POST[empezar]) ){
                 session_start();
                 $jugada++;
+
                 switch ($intentos) {
                     case $intentos==10;
-                        $aleatorio=rand(1,1024);
-                        echo "<h1>¿El número es $aleatorio?</h1>";
+                        $min=1;
+                        $max=1024;
+                        $aleatorio=512;
+                       echo "<h1>¿El número es $aleatorio</h1>";
                         Break;
                     case $intentos==16;
-                        $aleatorio=rand(1025,65536);
+                        $min=1025;
+                        $max=65536;
+                        $_SET['aleatorio']==65536;
                         echo "<h1>¿El número es $aleatorio?</h1>";
-                    Break;
                     case $intentos==20;
-                        $aleatorio=rand(pow(2,16),pow(2,20));
-                        echo "<h1>¿El número es $aleatorio?</h1>";
+                        $min=65537;
+                        $max=1048536;
+                        $aleatorio3=524288;
+                        echo "<h1>¿El número es $aleatorio3?</h1>";
                     Break;
                 }   
             }
             if (isset($_POST[jugar])){
-                $_POST['jugada']+1;
+                $jugada++ ;
                 $_POST['aleatorio']=$aleatorio;
+                //$min==1;
+                //$max;
                 switch ($numero) {
-                        case $numero=="mayor";
-                            while($numero=="mayor"){
-                                $aleatorio+100==$new_aleatorio;
-                                
-                                echo "<h1>¿El número es $new_aleatorio?</h1>";
-                            };
-                            Break;
-                        case $numero=="menor";
-                            while($numero=="menor"){
+                    case $numero=="mayor";
+                    $_SESSION['mayor_que']==$aleatorio;
+                        $aleatorio + ($aleatorio%2)==$new_aleatorio;
+                       
+                        echo "<h1>¿El número es $aleatorio?</h1>";
+                        Break;
+                    case $numero=="menor";
+                        $_SESSION['mayor_que']==1;
+                        $max==$aleatorio;
+                        $min==1;
+                        while($numero=="menor"){
                             $aleatorio - 100==$new_aleatorio;
                             echo "<h1>¿El número es $new_aleatorio?</h1>";
                             };   
